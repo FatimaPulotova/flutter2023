@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -11,6 +12,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  AudioPlayer player = AudioPlayer();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,16 +24,25 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             children: [
               Column(
-                children: const [
-                  ContanerWidget(
-                    containerdinTexsti: 'Contaner 1',
-                    containerdinTexsti2: 'sabak 1',
-                    icon: Icons.book,
-                    image:
-                        'https://kartinkin.net/uploads/posts/2022-02/1645532117_1-kartinkin-net-p-kartinki-knigi-dlya-prezentatsii-1.jpg',
-                    color: Colors.blue,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        player.setSource(
+                          AssetSource('assets/komuz.mp3'),
+                        );
+                      });
+                    },
+                    child: const ContanerWidget(
+                      containerdinTexsti: 'Contaner 1',
+                      containerdinTexsti2: 'sabak 1',
+                      icon: Icons.book,
+                      image:
+                          'https://kartinkin.net/uploads/posts/2022-02/1645532117_1-kartinkin-net-p-kartinki-knigi-dlya-prezentatsii-1.jpg',
+                      color: Colors.red,
+                    ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   ContanerWidget(

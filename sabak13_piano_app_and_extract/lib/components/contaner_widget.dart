@@ -21,7 +21,7 @@ class ContanerWidget extends StatelessWidget {
       padding: const EdgeInsets.only(left: 110, top: 15),
       width: double.infinity,
       height: 90,
-      color: Colors.blue,
+      color: color,
       child: Row(
         children: [
           Column(
