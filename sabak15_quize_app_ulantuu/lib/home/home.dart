@@ -53,14 +53,14 @@ class _HomePageState extends State<HomePage> {
         if (correctAnswer == koldonu) {
           iconAluu.add(
             const Icon(
-              Icons.check,
+              Icons.check_circle,
               color: Colors.green,
             ),
           );
         } else {
           iconAluu.add(
             const Icon(
-              Icons.close,
+              Icons.cancel,
               color: Colors.red,
             ),
           );

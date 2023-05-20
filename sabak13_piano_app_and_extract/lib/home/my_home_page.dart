@@ -12,7 +12,16 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  AudioPlayer player = AudioPlayer();
+//   late AudioCache cache; // you have this
+// late AudioPlayer player; // create this
+
+// void _playFile() async{
+//   player = await cache.  ('my_audio.mp3'); // assign player here
+// }
+
+// void _stopFile() {
+//   player?.stop(); // stop the file like this
+// }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,54 +35,51 @@ class _MyHomePageState extends State<MyHomePage> {
               Column(
                 children: [
                   GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        player.setSource(
-                          AssetSource('assets/komuz.mp3'),
-                        );
-                      });
-                    },
                     child: const ContanerWidget(
                       containerdinTexsti: 'Contaner 1',
                       containerdinTexsti2: 'sabak 1',
                       icon: Icons.book,
                       image:
-                          'https://kartinkin.net/uploads/posts/2022-02/1645532117_1-kartinkin-net-p-kartinki-knigi-dlya-prezentatsii-1.jpg',
+                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnfyYWcYNGx7YZ5ND6LJTBePYuEcNakqfuMN0RPfPu&s',
                       color: Colors.red,
+                      nameMusic: 'komuz1.mp3',
                     ),
                   ),
                   const SizedBox(
                     height: 10,
                   ),
-                  ContanerWidget(
+                  const ContanerWidget(
                     containerdinTexsti: 'Contaner 2',
                     containerdinTexsti2: 'sabak 2',
                     icon: Icons.access_alarm,
                     image:
                         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_PmRvBIPomcLVHofgc6qYGuYM4cvwccj2yOxOeroTRQ4mlTClqpo_KNRasrsCbICmN7E&usqp=CAU',
                     color: Colors.green,
+                    nameMusic: 'komuz2.mp3',
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  ContanerWidget(
+                  const ContanerWidget(
                     containerdinTexsti: 'Contaner 3',
                     containerdinTexsti2: 'sabak 3',
                     icon: Icons.abc,
                     image:
-                        'https://vjoy.cc/wp-content/uploads/2020/07/uchim_alfavit_21_28145750.jpg',
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnfyYWcYNGx7YZ5ND6LJTBePYuEcNakqfuMN0RPfPu&s',
                     color: Colors.orange,
+                    nameMusic: '',
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  ContanerWidget(
+                  const ContanerWidget(
                     containerdinTexsti: 'Contaner 4',
                     containerdinTexsti2: 'sabak 4',
                     icon: Icons.amp_stories,
                     image:
-                        'https://instaplus.me/blog/wp-content/uploads/2021/01/Instagram-influencer-marketing.png',
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnfyYWcYNGx7YZ5ND6LJTBePYuEcNakqfuMN0RPfPu&s',
                     color: Colors.yellow,
+                    nameMusic: '',
                   ),
                   SizedBox(
                     height: 10,
@@ -85,6 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     image:
                         'https://legionmurmansk.ru/images/thumbnails/800/700/detailed/2/%D0%A0%D0%A4_%D0%B1%D0%B5%D0%B7_%D0%B3%D0%B5%D1%80%D0%B1%D0%B0_nnib-ki.jpg',
                     color: Colors.indigo,
+                    nameMusic: '',
                   ),
                   SizedBox(
                     height: 10,
@@ -96,6 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     image:
                         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnfyYWcYNGx7YZ5ND6LJTBePYuEcNakqfuMN0RPfPu&s',
                     color: Colors.amber,
+                    nameMusic: '',
                   ),
                 ],
               )
