@@ -4,9 +4,8 @@ import 'package:sabak18_bmi_logica/them/app_text_style.dart';
 import 'package:sabak18_bmi_logica/them/app_texts.dart';
 
 class CalculateBatton extends StatelessWidget {
-  const CalculateBatton({
-    super.key,
-  });
+  const CalculateBatton({super.key, required this.onPressed});
+  final void Function() onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,7 @@ class CalculateBatton extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.zero),
           ),
           minimumSize: const Size(double.infinity, 73)),
-      onPressed: () {},
+      onPressed: onPressed,
       child: const Text(
         AppTexts.calculator,
         style: AppTextStyles.calculateStyle,

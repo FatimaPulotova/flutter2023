@@ -1,7 +1,10 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:sabak18_bmi_logica/components/calculate_batton.dart';
 import 'package:sabak18_bmi_logica/components/height.dart';
 import 'package:sabak18_bmi_logica/components/male_female.dart';
+import 'package:sabak18_bmi_logica/components/resultat_page.dart';
 import 'package:sabak18_bmi_logica/components/status_card.dart';
 import 'package:sabak18_bmi_logica/components/weight_age.dart';
 import 'package:sabak18_bmi_logica/them/app_colors.dart';
@@ -16,9 +19,27 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   bool isTrue = true;
-  int weight = 0;
-  int age = 0;
+  int weight = 60;
+  int age = 23;
   double height = 180;
+
+  void resultattar() {
+    final resultat = weight / pow(height / 100, 2);
+    if (resultat <= 18.5) {
+      // print('Сиз арыксыз:$resultat');
+      _showAlertDialog(context, 'Сиз арыксыз');
+    } else if (resultat >= 18.6 && resultat <= 25) {
+      // print('Сиздин салмагыныз нормалдуу:$resultat');
+      _showAlertDialog(context, 'Сиздин салмагыныз нормалдуу');
+    } else if (resultat >= 25.1 && resultat <= 30) {
+      // print('Сиз ашыкча салмактуусуз:$resultat');
+      _showAlertDialog(context, 'Сиз ашыкча салмактуусуз');
+    } else {
+      // print('Сиз семизсиз:$resultat');
+      _showAlertDialog(context, 'Сиз семизсиз');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -134,7 +155,41 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      bottomNavigationBar: const CalculateBatton(),
+      bottomNavigationBar: CalculateBatton(
+        onPressed: () {
+          resultattar();
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ResultatPage(
+                metri: height,
+                salmak: weight,
+              ),
+            ),
+          );
+        },
+      ),
     );
   }
+}
+
+Future<void> _showAlertDialog(BuildContext context, String text) async {
+  return showDialog<void>(
+    context: context,
+    barrierDismissible: false,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        backgroundColor: AppColors.pinkColor,
+        title: const Text(AppTexts.bmi, textAlign: TextAlign.center),
+        content: Text(text, textAlign: TextAlign.center),
+        actions: <Widget>[
+          TextButton(
+              child: const Text('Чыгуу'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              })
+        ],
+      );
+    },
+  );
 }

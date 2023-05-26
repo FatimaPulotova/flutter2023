@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:sabak18_bmi_logica/them/app_colors.dart';
 import 'package:sabak18_bmi_logica/them/app_text_style.dart';
 
@@ -44,7 +45,7 @@ class Height extends StatelessWidget {
         ),
         SizedBox(
           width: 300,
-          child: CupertinoSlider(
+          child: Slider.adaptive(
             value: height.toDouble(),
             min: 0,
             max: 240,
