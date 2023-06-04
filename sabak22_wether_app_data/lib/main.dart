@@ -33,7 +33,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   dynamic res;
   fetchData() async {
-    await Future.delayed(Duration(seconds: 7));
+    await Future.delayed(const Duration(seconds: 7));
     Dio dio = Dio();
     res = await dio.get('https://jsonplaceholder.typicode.com/posts');
     setState(() {});
@@ -50,10 +50,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('MyHomePage'),
+        title: const Text('MyHomePage'),
       ),
       body: Center(
-          child: res == null ? CircularProgressIndicator() : Text('$res')),
+          child: res == null ? const CircularProgressIndicator() : Text('$res')),
     );
   }
 }
