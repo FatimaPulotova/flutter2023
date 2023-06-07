@@ -104,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   image: DecorationImage(
                     fit: BoxFit.cover,
                     image: AssetImage(
-                      'bgimage.jpg',
+                      'assets/bgimage.jpg',
                     ),
                   ),
                 ),
