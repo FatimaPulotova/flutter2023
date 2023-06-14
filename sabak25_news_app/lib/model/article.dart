@@ -18,4 +18,16 @@ class Article {
   final String? urlToImage;
   final String publishedAt;
   final String content;
+
+  factory Article.fronJson(Map<String, dynamic> json) {
+    return Article(
+        source: Source.fromJson(json['source']),
+        autor: json[' autor'],
+        title: json['title'],
+        description: json['description'],
+        url: json['url'],
+        urlToImage: json['urlToImage'],
+        publishedAt: json['publishedAt'],
+        content: json['content']);
+  }
 }
