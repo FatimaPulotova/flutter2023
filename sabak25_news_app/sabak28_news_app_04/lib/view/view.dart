@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-import 'package:sabak28_news_app_04/constants/api_const.dart';
 import 'package:sabak28_news_app_04/model/top_news.dart';
 import 'package:sabak28_news_app_04/services/fetch_service.dart';
 import 'package:sabak28_news_app_04/view/detail_view.dart';
