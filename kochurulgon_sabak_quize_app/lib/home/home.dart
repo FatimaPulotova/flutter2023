@@ -1,8 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:kochurulgon_sabak_quize_app/constants/app_color.dart';
+import 'package:kochurulgon_sabak_quize_app/constants/app_text_styles.dart';
 import 'package:kochurulgon_sabak_quize_app/constants/texts.dart';
-
+import 'package:kochurulgon_sabak_quize_app/usefile.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -150,7 +150,7 @@ class _MyHomePageState extends State<MyHomePage> {
         const Spacer(),
         Text(
           useQiuze.surooAluu(),
-          style: AppTextStyles.appTextStyle,
+          style: AppTexstStyles.AppTextStyles,
           textAlign: TextAlign.center,
         ),
         const SizedBox(
@@ -161,7 +161,7 @@ class _MyHomePageState extends State<MyHomePage> {
           width: 335,
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.trueBgrColor),
+                backgroundColor: AppColors.trueBgColor),
             onPressed: ishtoo
                 ? () {
                     setState(() {
@@ -169,9 +169,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     });
                   }
                 : null,
-            child:  Text(
-              AppTexts.tuuraBatText,
-              style: AppTextStyles.trueTextStyle,
+            child: const Text(
+              AppTexts.tuura,
+              style: AppTexstStyles.trueStyles,
             ),
           ),
         ),
@@ -183,7 +183,7 @@ class _MyHomePageState extends State<MyHomePage> {
           width: 335,
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.falseBgrColor),
+                backgroundColor: AppColors.falseBgColor),
             onPressed: ishtoo
                 ? () {
                     setState(() {
@@ -191,9 +191,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     });
                   }
                 : null,
-            child:  Text(
-              AppTexts.tuuraEmesBatText,
-              style: AppTextStyles.trueTextStyle,
+            child: const Text(
+              AppTexts.tuura,
+              style: AppTexstStyles.trueStyles,
             ),
           ),
         ),
@@ -225,11 +225,11 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Center(
           child: Text(
             'Тапшырма 7',
-            style: AppTextStyles.appBarTextStyle,
+            style: AppTexstStyles.appBarTexstStyle,
           ),
         ),
         elevation: 0,
-        backgroundColor: AppColors.appBarColor,
+        backgroundColor: AppColors.appBarTextColor,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -239,5 +239,4 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
-}
 }

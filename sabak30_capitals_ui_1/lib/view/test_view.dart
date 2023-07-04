@@ -62,15 +62,17 @@ class _TestViewState extends State<TestView> {
       ),
       body: Column(
         children: [
-          Expanded(
-            child: Slider(
-              value: 180,
-              onChanged: (v) {},
-              min: 0,
-              max: 200,
-            ),
+          Slider(
+            activeColor: Colors.black,
+            value: 200,
+            onChanged: (v) {},
+            min: 0,
+            max: 200,
           ),
-          const Text('Paris')
+          const Text(
+            'Paris',
+            style: AppTextStyle.capitalsStyle,
+          ),
         ],
       ),
     );

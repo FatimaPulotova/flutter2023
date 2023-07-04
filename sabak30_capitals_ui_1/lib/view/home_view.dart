@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sabak30_capitals_ui_1/constants/app_colors.dart';
 import 'package:sabak30_capitals_ui_1/view/test_view.dart';
 
@@ -95,8 +96,10 @@ class _HomeViewState extends State<HomeView> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          Image.asset(
-                              'assets/continents/${images[continents[index]]}')
+                          SvgPicture.asset(
+                            'assets/continents/${images[continents[index]]}',
+                            height: 120,
+                          )
                         ],
                       ),
                     ),
